@@ -29,5 +29,5 @@ void DHTll_DataPinModeConfig(GPIOMode_TypeDef mode);
 uint8_t DHT11_ReadByte(void);
 ErrorStatus DHTll_ReadData(DHTll_DATA_TYPEDEF* dhtll_data);
 void DHTll_print(void);
-
+ErrorStatus Get_DHTll_DATA(DHTll_DATA_TYPEDEF* dhtll_data);
 #endif //__DHTLL_H

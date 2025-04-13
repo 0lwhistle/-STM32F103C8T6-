@@ -68,7 +68,7 @@ ErrorStatus DHTll_ReadData(DHTll_DATA_TYPEDEF* dhtll_data)
 		{
 			if(count_timer_temp++ > 83) 
 			{		
-					printf("3\n");
+					//printf("3\n");
 					return ERROR;
 			}
 			DWT_DelayUs(1);
@@ -80,7 +80,7 @@ ErrorStatus DHTll_ReadData(DHTll_DATA_TYPEDEF* dhtll_data)
 		{
 			if(count_timer_temp++ > 87) 
 			{
-				printf("4\n");
+				//printf("4\n");
 				return ERROR;
 			}
 			DWT_DelayUs(1);
@@ -126,3 +126,13 @@ void DHTll_print()
 			else printf("READ_DHT11_DATA ERROR!\r\n");
 }
 
+ErrorStatus Get_DHTll_DATA(DHTll_DATA_TYPEDEF* dhtll_data_temp)
+{
+	if(DHTll_ReadData(dhtll_data_temp) == SUCCESS)
+	{
+		return SUCCESS;
+	}
+	
+	else 
+		return ERROR;
+}

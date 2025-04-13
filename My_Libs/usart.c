@@ -8,6 +8,14 @@ int fputc(int ch, FILE* f){//printf()函数的使用前重载
 	return ch;
 }
 
+int fgetc(FILE *f)
+{
+		while (USART_GetFlagStatus(USART1, USART_FLAG_RXNE) == RESET);
+
+		return (int)USART_ReceiveData(USART1);
+}
+
+
 void My_USART_SendBytes(USART_TypeDef *USARTx, uint8_t *pData, uint16_t Size){
 	for(uint32_t i = 0; i < Size; ++i){
 		while(USART_GetFlagStatus(USARTx, USART_FLAG_TXE) == RESET);//判断输出寄存器是否为空
